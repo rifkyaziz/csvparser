@@ -2,9 +2,19 @@ defmodule Csvparser do
   @moduledoc """
     CSV Parser Module to populate data
   """
+  def start(_type, _args) do
+    import Supervisor.Spec
+
+    children = [
+      supervisor(Csvparser.Repo, [])
+    ] 
+
+    opts = [strategy: :one_for_one, name: Csvparser.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
 
   @doc """
-  
+    Main function 
   """
   def main(args) do
     args
@@ -28,8 +38,8 @@ defmodule Csvparser do
       IO.puts "File doesnt exist"
     else
       File.stream!(filename)
-      |> CSV.decode
-      |> Enum.map(fn x -> IO.puts x end)
+      |> CSV.decode(separator: ?,,headers: true)
+      |> Enum.each(fn x -> IO.inspect x end)
     end
   end
 

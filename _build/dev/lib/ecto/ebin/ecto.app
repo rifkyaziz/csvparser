@@ -7,6 +7,7 @@
                         'Elixir.Ecto.Adapter.Structure',
                         'Elixir.Ecto.Adapter.Transaction',
                         'Elixir.Ecto.Adapters.MySQL',
+                        'Elixir.Ecto.Adapters.MySQL.Connection',
                         'Elixir.Ecto.Adapters.Postgres',
                         'Elixir.Ecto.Adapters.SQL',
                         'Elixir.Ecto.Adapters.SQL.Connection',

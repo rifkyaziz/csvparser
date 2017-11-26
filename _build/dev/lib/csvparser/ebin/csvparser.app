@@ -1,7 +1,8 @@
 {application,csvparser,
-             [{applications,[kernel,stdlib,elixir,logger,csv,ecto]},
+             [{applications,[kernel,stdlib,elixir,logger,mariaex,ecto,csv]},
               {description,"csvparser"},
-              {modules,['Elixir.Csvparser']},
+              {modules,['Elixir.Csvparser','Elixir.Csvparser.Repo']},
               {registered,[]},
               {vsn,"0.1.0"},
-              {extra_applications,[logger]}]}.
+              {extra_applications,[logger,mariaex,ecto]},
+              {mod,{'Elixir.Csvparser',[]}}]}.
