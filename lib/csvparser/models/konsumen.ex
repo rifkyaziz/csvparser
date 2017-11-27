@@ -1,5 +1,5 @@
-defmodule Ecto.Konsumen do
-  use Ecto.model
+defmodule Csvparser.Konsumen do
+  use Ecto.Schema
 
   schema "data" do
 	field :nomor_kontrak, :string
@@ -53,7 +53,7 @@ defmodule Ecto.Konsumen do
 	field :marital_status, :string
 	field :tgl_akhir_angsuran, :string
 	field :tgl_bukti, :string
-	field :no_bukti', :string
+	field :no_bukti, :string
   end
 end
 
